@@ -1,0 +1,30 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"10 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"14 C:\Users\ce\MPLABXProjects\7-segmentos.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"340 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f877a.h
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"14 C:\Users\ce\MPLABXProjects\7-segmentos.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"30
+[v main@i i `i  1 a 2 10 ]
+"17
+[v main@digits digits `[10]uc  1 a 10 0 ]
+"15
+[v main@F851 F851 `[10]uc  1 s 10 F851 ]
+"36
+} 0
