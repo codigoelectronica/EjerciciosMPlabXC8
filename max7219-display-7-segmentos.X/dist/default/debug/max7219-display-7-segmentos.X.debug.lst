@@ -1,0 +1,1606 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Sat Aug 29 00:02:17 2020
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	flic
+     4                           	psect	strings,global,class=STRING,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2,group=1
+    17                           	psect	text8,local,class=CODE,merge=1,delta=2,group=1
+    18                           	dabs	1,0x7E,2
+    19  0000                     
+    20                           ; Version 2.05
+    21                           ; Generated 20/12/2018 GMT
+    22                           ; 
+    23                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
+    30                           ; 
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    32                           ;        conditions and the following disclaimer.
+    33                           ; 
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution.
+    37                           ; 
+    38                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    39                           ;        software without specific prior written permission.
+    40                           ; 
+    41                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    42                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    43                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    44                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    45                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    46                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    47                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    48                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; 
+    50                           ; 
+    51                           ; Code-generator required, PIC16F877A Definitions
+    52                           ; 
+    53                           ; SFR Addresses
+    54  0000                     	;# 
+    55  0001                     	;# 
+    56  0002                     	;# 
+    57  0003                     	;# 
+    58  0004                     	;# 
+    59  0005                     	;# 
+    60  0006                     	;# 
+    61  0007                     	;# 
+    62  0008                     	;# 
+    63  0009                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000D                     	;# 
+    68  000E                     	;# 
+    69  000E                     	;# 
+    70  000F                     	;# 
+    71  0010                     	;# 
+    72  0011                     	;# 
+    73  0012                     	;# 
+    74  0013                     	;# 
+    75  0014                     	;# 
+    76  0015                     	;# 
+    77  0015                     	;# 
+    78  0016                     	;# 
+    79  0017                     	;# 
+    80  0018                     	;# 
+    81  0019                     	;# 
+    82  001A                     	;# 
+    83  001B                     	;# 
+    84  001B                     	;# 
+    85  001C                     	;# 
+    86  001D                     	;# 
+    87  001E                     	;# 
+    88  001F                     	;# 
+    89  0081                     	;# 
+    90  0085                     	;# 
+    91  0086                     	;# 
+    92  0087                     	;# 
+    93  0088                     	;# 
+    94  0089                     	;# 
+    95  008C                     	;# 
+    96  008D                     	;# 
+    97  008E                     	;# 
+    98  0091                     	;# 
+    99  0092                     	;# 
+   100  0093                     	;# 
+   101  0094                     	;# 
+   102  0098                     	;# 
+   103  0099                     	;# 
+   104  009C                     	;# 
+   105  009D                     	;# 
+   106  009E                     	;# 
+   107  009F                     	;# 
+   108  010C                     	;# 
+   109  010D                     	;# 
+   110  010E                     	;# 
+   111  010F                     	;# 
+   112  018C                     	;# 
+   113  018D                     	;# 
+   114  0000                     	;# 
+   115  0001                     	;# 
+   116  0002                     	;# 
+   117  0003                     	;# 
+   118  0004                     	;# 
+   119  0005                     	;# 
+   120  0006                     	;# 
+   121  0007                     	;# 
+   122  0008                     	;# 
+   123  0009                     	;# 
+   124  000A                     	;# 
+   125  000B                     	;# 
+   126  000C                     	;# 
+   127  000D                     	;# 
+   128  000E                     	;# 
+   129  000E                     	;# 
+   130  000F                     	;# 
+   131  0010                     	;# 
+   132  0011                     	;# 
+   133  0012                     	;# 
+   134  0013                     	;# 
+   135  0014                     	;# 
+   136  0015                     	;# 
+   137  0015                     	;# 
+   138  0016                     	;# 
+   139  0017                     	;# 
+   140  0018                     	;# 
+   141  0019                     	;# 
+   142  001A                     	;# 
+   143  001B                     	;# 
+   144  001B                     	;# 
+   145  001C                     	;# 
+   146  001D                     	;# 
+   147  001E                     	;# 
+   148  001F                     	;# 
+   149  0081                     	;# 
+   150  0085                     	;# 
+   151  0086                     	;# 
+   152  0087                     	;# 
+   153  0088                     	;# 
+   154  0089                     	;# 
+   155  008C                     	;# 
+   156  008D                     	;# 
+   157  008E                     	;# 
+   158  0091                     	;# 
+   159  0092                     	;# 
+   160  0093                     	;# 
+   161  0094                     	;# 
+   162  0098                     	;# 
+   163  0099                     	;# 
+   164  009C                     	;# 
+   165  009D                     	;# 
+   166  009E                     	;# 
+   167  009F                     	;# 
+   168  010C                     	;# 
+   169  010D                     	;# 
+   170  010E                     	;# 
+   171  010F                     	;# 
+   172  018C                     	;# 
+   173  018D                     	;# 
+   174                           
+   175                           	psect	strings
+   176  0003                     __pstrings:	
+   177  0003                     stringtab:	
+   178  0003                     __stringtab:	
+   179  0003                     stringcode:	
+   180                           ;	String table - string pointers are 1 byte each
+   181                           
+   182  0003                     stringdir:	
+   183  0003  3000               	movlw	high stringdir
+   184  0004  008A               	movwf	10
+   185  0005  0804               	movf	4,w
+   186  0006  0A84               	incf	4,f
+   187  0007  0782               	addwf	2,f
+   188  0008                     __stringbase:	
+   189  0008  3400               	retlw	0
+   190  0009                     __end_of__stringtab:	
+   191  0009                     _digitos:	
+   192  0009  347E               	retlw	126
+   193  000A  3430               	retlw	48
+   194  000B  346D               	retlw	109
+   195  000C  3479               	retlw	121
+   196  000D  3433               	retlw	51
+   197  000E  345B               	retlw	91
+   198  000F  345F               	retlw	95
+   199  0010  3470               	retlw	112
+   200  0011  347F               	retlw	127
+   201  0012  347B               	retlw	123
+   202  0013                     __end_of_digitos:	
+   203  0007                     _PORTCbits	set	7
+   204  0087                     _TRISCbits	set	135
+   205                           
+   206                           ; #config settings
+   207  0000                     
+   208                           	psect	cinit
+   209  07F9                     start_initialization:	
+   210  07F9                     __initialization:	
+   211                           
+   212                           ; Clear objects allocated to BANK0
+   213  07F9  1283               	bcf	3,5	;RP0=0, select bank0
+   214  07FA  1303               	bcf	3,6	;RP1=0, select bank0
+   215  07FB  01AE               	clrf	__pbssBANK0& (0+127)
+   216  07FC                     end_of_initialization:	
+   217                           ;End of C runtime variable initialization code
+   218                           
+   219  07FC                     __end_of__initialization:	
+   220  07FC  0183               	clrf	3
+   221  07FD  120A  118A  2EC2   	ljmp	_main	;jump to C main() function
+   222                           
+   223                           	psect	bssBANK0
+   224  002E                     __pbssBANK0:	
+   225  002E                     _cont:	
+   226  002E                     	ds	1
+   227                           
+   228                           	psect	cstackCOMMON
+   229  0070                     __pcstackCOMMON:	
+   230  0070                     ?_max7219_WriteBits:	
+   231  0070                     ?_max7219_Config:	
+   232                           ; 1 bytes @ 0x0
+   233                           
+   234  0070                     ?_max7219_Clear:	
+   235                           ; 1 bytes @ 0x0
+   236                           
+   237  0070                     ?_main:	
+   238                           ; 1 bytes @ 0x0
+   239                           
+   240  0070                     ?___awdiv:	
+   241                           ; 1 bytes @ 0x0
+   242                           
+   243  0070                     ?___awmod:	
+   244                           ; 2 bytes @ 0x0
+   245                           
+   246  0070                     max7219_WriteBits@valor:	
+   247                           ; 2 bytes @ 0x0
+   248                           
+   249  0070                     ___awdiv@divisor:	
+   250                           ; 2 bytes @ 0x0
+   251                           
+   252  0070                     ___awmod@divisor:	
+   253                           ; 2 bytes @ 0x0
+   254                           
+   255                           
+   256                           ; 2 bytes @ 0x0
+   257  0070                     	ds	2
+   258  0072                     ??_max7219_WriteBits:	
+   259  0072                     ___awdiv@dividend:	
+   260                           ; 1 bytes @ 0x2
+   261                           
+   262  0072                     ___awmod@dividend:	
+   263                           ; 2 bytes @ 0x2
+   264                           
+   265                           
+   266                           ; 2 bytes @ 0x2
+   267  0072                     	ds	2
+   268  0074                     ??___awdiv:	
+   269  0074                     ??___awmod:	
+   270                           ; 1 bytes @ 0x4
+   271                           
+   272                           
+   273                           ; 1 bytes @ 0x4
+   274  0074                     	ds	1
+   275  0075                     ___awdiv@counter:	
+   276  0075                     ___awmod@counter:	
+   277                           ; 1 bytes @ 0x5
+   278                           
+   279  0075                     max7219_WriteBits@temporal:	
+   280                           ; 1 bytes @ 0x5
+   281                           
+   282                           
+   283                           ; 2 bytes @ 0x5
+   284  0075                     	ds	1
+   285  0076                     ___awdiv@sign:	
+   286  0076                     ___awmod@sign:	
+   287                           ; 1 bytes @ 0x6
+   288                           
+   289                           
+   290                           ; 1 bytes @ 0x6
+   291  0076                     	ds	1
+   292  0077                     max7219_WriteBits@c:	
+   293  0077                     ___awdiv@quotient:	
+   294                           ; 1 bytes @ 0x7
+   295                           
+   296                           
+   297                           ; 2 bytes @ 0x7
+   298  0077                     	ds	1
+   299  0078                     ?_max7219_WriteComando:	
+   300  0078                     ?_max7219_WriteDigito:	
+   301                           ; 1 bytes @ 0x8
+   302                           
+   303  0078                     max7219_WriteDigito@valorDeDigito:	
+   304                           ; 1 bytes @ 0x8
+   305                           
+   306  0078                     max7219_WriteComando@valorDeComando:	
+   307                           ; 1 bytes @ 0x8
+   308                           
+   309                           
+   310                           ; 1 bytes @ 0x8
+   311  0078                     	ds	1
+   312  0079                     ??_max7219_WriteComando:	
+   313  0079                     ??_max7219_WriteDigito:	
+   314                           ; 1 bytes @ 0x9
+   315                           
+   316                           
+   317                           ; 1 bytes @ 0x9
+   318  0079                     	ds	2
+   319  007B                     max7219_WriteDigito@digito:	
+   320  007B                     max7219_WriteComando@comando:	
+   321                           ; 1 bytes @ 0xB
+   322                           
+   323                           
+   324                           ; 1 bytes @ 0xB
+   325  007B                     	ds	1
+   326  007C                     max7219_WriteDigito@temporal:	
+   327  007C                     max7219_WriteComando@temporal:	
+   328                           ; 2 bytes @ 0xC
+   329                           
+   330                           
+   331                           ; 2 bytes @ 0xC
+   332  007C                     	ds	2
+   333                           
+   334                           	psect	cstackBANK0
+   335  0020                     __pcstackBANK0:	
+   336  0020                     ??_max7219_Config:	
+   337  0020                     ??_max7219_Clear:	
+   338                           ; 1 bytes @ 0x0
+   339                           
+   340                           
+   341                           ; 1 bytes @ 0x0
+   342  0020                     	ds	1
+   343  0021                     max7219_Clear@i:	
+   344                           
+   345                           ; 1 bytes @ 0x1
+   346  0021                     	ds	1
+   347  0022                     ?_displayNumber:	
+   348  0022                     displayNumber@number:	
+   349                           ; 1 bytes @ 0x2
+   350                           
+   351                           
+   352                           ; 2 bytes @ 0x2
+   353  0022                     	ds	2
+   354  0024                     ??_displayNumber:	
+   355                           
+   356                           ; 1 bytes @ 0x4
+   357  0024                     	ds	1
+   358  0025                     displayNumber@result:	
+   359                           
+   360                           ; 2 bytes @ 0x5
+   361  0025                     	ds	2
+   362  0027                     displayNumber@pos:	
+   363                           
+   364                           ; 2 bytes @ 0x7
+   365  0027                     	ds	2
+   366  0029                     ??_main:	
+   367                           
+   368                           ; 1 bytes @ 0x9
+   369  0029                     	ds	3
+   370  002C                     main@i:	
+   371                           
+   372                           ; 2 bytes @ 0xC
+   373  002C                     	ds	2
+   374                           
+   375                           	psect	maintext
+   376  06C2                     __pmaintext:	
+   377 ;;
+   378 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   379 ;;
+   380 ;; *************** function _main *****************
+   381 ;; Defined at:
+   382 ;;		line 17 in file "main.c"
+   383 ;; Parameters:    Size  Location     Type
+   384 ;;		None
+   385 ;; Auto vars:     Size  Location     Type
+   386 ;;  i               2   12[BANK0 ] int 
+   387 ;; Return value:  Size  Location     Type
+   388 ;;                  1    wreg      void 
+   389 ;; Registers used:
+   390 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   391 ;; Tracked objects:
+   392 ;;		On entry : B00/0
+   393 ;;		On exit  : 0/0
+   394 ;;		Unchanged: 0/0
+   395 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   396 ;;      Params:         0       0       0       0       0
+   397 ;;      Locals:         0       2       0       0       0
+   398 ;;      Temps:          0       3       0       0       0
+   399 ;;      Totals:         0       5       0       0       0
+   400 ;;Total ram usage:        5 bytes
+   401 ;; Hardware stack levels required when called:    4
+   402 ;; This function calls:
+   403 ;;		_displayNumber
+   404 ;;		_max7219_Clear
+   405 ;;		_max7219_Config
+   406 ;; This function is called by:
+   407 ;;		Startup code after reset
+   408 ;; This function uses a non-reentrant model
+   409 ;;
+   410                           
+   411                           
+   412                           ;psect for function _main
+   413  06C2                     _main:	
+   414                           
+   415                           ;main.c: 18:     max7219_Config();
+   416                           
+   417                           ;incstack = 0
+   418                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   419  06C2  120A  118A  264F  120A  118A  	fcall	_max7219_Config
+   420                           
+   421                           ;main.c: 19:     TRISCbits.TRISC0 = 1;
+   422  06C7  1683               	bsf	3,5	;RP0=1, select bank1
+   423  06C8  1303               	bcf	3,6	;RP1=0, select bank1
+   424  06C9  1407               	bsf	7,0	;volatile
+   425                           
+   426                           ;main.c: 20:     TRISCbits.TRISC1 = 1;
+   427  06CA  1487               	bsf	7,1	;volatile
+   428                           
+   429                           ;main.c: 22:     max7219_Clear();
+   430  06CB  120A  118A  25E5  120A  118A  	fcall	_max7219_Clear
+   431                           
+   432                           ;main.c: 24:     for(int i = 0; i < 9999; i++) {
+   433  06D0  1283               	bcf	3,5	;RP0=0, select bank0
+   434  06D1  1303               	bcf	3,6	;RP1=0, select bank0
+   435  06D2  01AC               	clrf	main@i
+   436  06D3  01AD               	clrf	main@i+1
+   437  06D4                     l999:	
+   438                           
+   439                           ;main.c: 25:         displayNumber(i);
+   440  06D4  1283               	bcf	3,5	;RP0=0, select bank0
+   441  06D5  1303               	bcf	3,6	;RP1=0, select bank0
+   442  06D6  082D               	movf	main@i+1,w
+   443  06D7  00A3               	movwf	displayNumber@number+1
+   444  06D8  082C               	movf	main@i,w
+   445  06D9  00A2               	movwf	displayNumber@number
+   446  06DA  120A  118A  274F  120A  118A  	fcall	_displayNumber
+   447                           
+   448                           ;main.c: 26:         _delay((unsigned long)((1000)*(20000000/4000.0)));
+   449  06DF  301A               	movlw	26
+   450  06E0  1283               	bcf	3,5	;RP0=0, select bank0
+   451  06E1  1303               	bcf	3,6	;RP1=0, select bank0
+   452  06E2  00AB               	movwf	??_main+2
+   453  06E3  305E               	movlw	94
+   454  06E4  00AA               	movwf	??_main+1
+   455  06E5  306D               	movlw	109
+   456  06E6  00A9               	movwf	??_main
+   457  06E7                     u557:	
+   458  06E7  0BA9               	decfsz	??_main,f
+   459  06E8  2EE7               	goto	u557
+   460  06E9  0BAA               	decfsz	??_main+1,f
+   461  06EA  2EE7               	goto	u557
+   462  06EB  0BAB               	decfsz	??_main+2,f
+   463  06EC  2EE7               	goto	u557
+   464  06ED  2EEE               	nop2
+   465                           
+   466                           ;main.c: 27:     }
+   467  06EE  3001               	movlw	1
+   468  06EF  1283               	bcf	3,5	;RP0=0, select bank0
+   469  06F0  1303               	bcf	3,6	;RP1=0, select bank0
+   470  06F1  07AC               	addwf	main@i,f
+   471  06F2  1803               	skipnc
+   472  06F3  0AAD               	incf	main@i+1,f
+   473  06F4  3000               	movlw	0
+   474  06F5  07AD               	addwf	main@i+1,f
+   475  06F6  082D               	movf	main@i+1,w
+   476  06F7  3A80               	xorlw	128
+   477  06F8  00FF               	movwf	127
+   478  06F9  30A7               	movlw	167
+   479  06FA  027F               	subwf	127,w
+   480  06FB  1D03               	skipz
+   481  06FC  2EFF               	goto	u545
+   482  06FD  300F               	movlw	15
+   483  06FE  022C               	subwf	main@i,w
+   484  06FF                     u545:	
+   485  06FF  1C03               	skipc
+   486  0700  2ED4               	goto	l999
+   487  0701  120A  118A  2800   	ljmp	start
+   488  0704                     __end_of_main:	
+   489                           
+   490                           	psect	text1
+   491  064F                     __ptext1:	
+   492 ;; *************** function _max7219_Config *****************
+   493 ;; Defined at:
+   494 ;;		line 51 in file "./max7219.h"
+   495 ;; Parameters:    Size  Location     Type
+   496 ;;		None
+   497 ;; Auto vars:     Size  Location     Type
+   498 ;;		None
+   499 ;; Return value:  Size  Location     Type
+   500 ;;                  1    wreg      void 
+   501 ;; Registers used:
+   502 ;;		wreg, status,2, status,0, pclath, cstack
+   503 ;; Tracked objects:
+   504 ;;		On entry : 0/0
+   505 ;;		On exit  : 0/0
+   506 ;;		Unchanged: 0/0
+   507 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   508 ;;      Params:         0       0       0       0       0
+   509 ;;      Locals:         0       0       0       0       0
+   510 ;;      Temps:          0       1       0       0       0
+   511 ;;      Totals:         0       1       0       0       0
+   512 ;;Total ram usage:        1 bytes
+   513 ;; Hardware stack levels used:    1
+   514 ;; Hardware stack levels required when called:    2
+   515 ;; This function calls:
+   516 ;;		_max7219_WriteComando
+   517 ;; This function is called by:
+   518 ;;		_main
+   519 ;; This function uses a non-reentrant model
+   520 ;;
+   521                           
+   522                           
+   523                           ;psect for function _max7219_Config
+   524  064F                     _max7219_Config:	
+   525                           
+   526                           ;./max7219.h: 52:     TRISCbits.TRISC5 = 0;
+   527                           
+   528                           ;incstack = 0
+   529                           ; Regs used in _max7219_Config: [wreg+status,2+status,0+pclath+cstack]
+   530  064F  1683               	bsf	3,5	;RP0=1, select bank1
+   531  0650  1303               	bcf	3,6	;RP1=0, select bank1
+   532  0651  1287               	bcf	7,5	;volatile
+   533                           
+   534                           ;./max7219.h: 53:     TRISCbits.TRISC7 = 0;
+   535  0652  1387               	bcf	7,7	;volatile
+   536                           
+   537                           ;./max7219.h: 54:     TRISCbits.TRISC6 = 0;
+   538  0653  1307               	bcf	7,6	;volatile
+   539                           
+   540                           ;./max7219.h: 56:     PORTCbits.RC5 = 0;
+   541  0654  1283               	bcf	3,5	;RP0=0, select bank0
+   542  0655  1303               	bcf	3,6	;RP1=0, select bank0
+   543  0656  1287               	bcf	7,5	;volatile
+   544                           
+   545                           ;./max7219.h: 57:     PORTCbits.RC7 = 0;
+   546  0657  1387               	bcf	7,7	;volatile
+   547                           
+   548                           ;./max7219.h: 58:     PORTCbits.RC6 = 1;
+   549  0658  1707               	bsf	7,6	;volatile
+   550                           
+   551                           ;./max7219.h: 60:     max7219_WriteComando(0x0C, 0x00);
+   552  0659  01F8               	clrf	max7219_WriteComando@valorDeComando
+   553  065A  300C               	movlw	12
+   554  065B  120A  118A  25FA  120A  118A  	fcall	_max7219_WriteComando
+   555                           
+   556                           ;./max7219.h: 61:     max7219_WriteComando(0x0F, 0x00);
+   557  0660  01F8               	clrf	max7219_WriteComando@valorDeComando
+   558  0661  300F               	movlw	15
+   559  0662  120A  118A  25FA  120A  118A  	fcall	_max7219_WriteComando
+   560                           
+   561                           ;./max7219.h: 62:     max7219_WriteComando(0x0A, 0x0F);
+   562  0667  300F               	movlw	15
+   563  0668  1283               	bcf	3,5	;RP0=0, select bank0
+   564  0669  1303               	bcf	3,6	;RP1=0, select bank0
+   565  066A  00A0               	movwf	??_max7219_Config
+   566  066B  0820               	movf	??_max7219_Config,w
+   567  066C  00F8               	movwf	max7219_WriteComando@valorDeComando
+   568  066D  300A               	movlw	10
+   569  066E  120A  118A  25FA  120A  118A  	fcall	_max7219_WriteComando
+   570                           
+   571                           ;./max7219.h: 63:     max7219_WriteComando(0x0B, 0x07);
+   572  0673  3007               	movlw	7
+   573  0674  1283               	bcf	3,5	;RP0=0, select bank0
+   574  0675  1303               	bcf	3,6	;RP1=0, select bank0
+   575  0676  00A0               	movwf	??_max7219_Config
+   576  0677  0820               	movf	??_max7219_Config,w
+   577  0678  00F8               	movwf	max7219_WriteComando@valorDeComando
+   578  0679  300B               	movlw	11
+   579  067A  120A  118A  25FA  120A  118A  	fcall	_max7219_WriteComando
+   580                           
+   581                           ;./max7219.h: 64:     max7219_WriteComando(0x0C, 0x01);
+   582  067F  01F8               	clrf	max7219_WriteComando@valorDeComando
+   583  0680  0AF8               	incf	max7219_WriteComando@valorDeComando,f
+   584  0681  300C               	movlw	12
+   585  0682  120A  118A  25FA   	fcall	_max7219_WriteComando
+   586  0685  0008               	return
+   587  0686                     __end_of_max7219_Config:	
+   588                           
+   589                           	psect	text2
+   590  05FA                     __ptext2:	
+   591 ;; *************** function _max7219_WriteComando *****************
+   592 ;; Defined at:
+   593 ;;		line 105 in file "./max7219.h"
+   594 ;; Parameters:    Size  Location     Type
+   595 ;;  comando         1    wreg     unsigned char 
+   596 ;;  valorDeComan    1    8[COMMON] unsigned char 
+   597 ;; Auto vars:     Size  Location     Type
+   598 ;;  comando         1   11[COMMON] unsigned char 
+   599 ;;  temporal        2   12[COMMON] volatile unsigned int 
+   600 ;; Return value:  Size  Location     Type
+   601 ;;                  1    wreg      void 
+   602 ;; Registers used:
+   603 ;;		wreg, status,2, status,0, pclath, cstack
+   604 ;; Tracked objects:
+   605 ;;		On entry : 0/0
+   606 ;;		On exit  : 0/0
+   607 ;;		Unchanged: 0/0
+   608 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   609 ;;      Params:         1       0       0       0       0
+   610 ;;      Locals:         3       0       0       0       0
+   611 ;;      Temps:          2       0       0       0       0
+   612 ;;      Totals:         6       0       0       0       0
+   613 ;;Total ram usage:        6 bytes
+   614 ;; Hardware stack levels used:    1
+   615 ;; Hardware stack levels required when called:    1
+   616 ;; This function calls:
+   617 ;;		_max7219_WriteBits
+   618 ;; This function is called by:
+   619 ;;		_max7219_Config
+   620 ;;		_max7219_Intensity
+   621 ;; This function uses a non-reentrant model
+   622 ;;
+   623                           
+   624                           
+   625                           ;psect for function _max7219_WriteComando
+   626  05FA                     _max7219_WriteComando:	
+   627                           
+   628                           ;incstack = 0
+   629                           ; Regs used in _max7219_WriteComando: [wreg+status,2+status,0+pclath+cstack]
+   630                           ;max7219_WriteComando@comando stored from wreg
+   631  05FA  00FB               	movwf	max7219_WriteComando@comando
+   632                           
+   633                           ;./max7219.h: 106:     volatile unsigned int temporal = 0;
+   634  05FB  01FC               	clrf	max7219_WriteComando@temporal	;volatile
+   635  05FC  01FD               	clrf	max7219_WriteComando@temporal+1	;volatile
+   636                           
+   637                           ;./max7219.h: 107:     temporal = comando;
+   638  05FD  087B               	movf	max7219_WriteComando@comando,w
+   639  05FE  00F9               	movwf	??_max7219_WriteComando
+   640  05FF  01FA               	clrf	??_max7219_WriteComando+1
+   641  0600  0879               	movf	??_max7219_WriteComando,w
+   642  0601  00FC               	movwf	max7219_WriteComando@temporal	;volatile
+   643  0602  087A               	movf	??_max7219_WriteComando+1,w
+   644  0603  00FD               	movwf	max7219_WriteComando@temporal+1	;volatile
+   645                           
+   646                           ;./max7219.h: 108:     temporal = temporal << 8;
+   647  0604  087C               	movf	max7219_WriteComando@temporal,w	;volatile
+   648  0605  00FA               	movwf	??_max7219_WriteComando+1
+   649  0606  01F9               	clrf	??_max7219_WriteComando
+   650  0607  0879               	movf	??_max7219_WriteComando,w
+   651  0608  00FC               	movwf	max7219_WriteComando@temporal	;volatile
+   652  0609  087A               	movf	??_max7219_WriteComando+1,w
+   653  060A  00FD               	movwf	max7219_WriteComando@temporal+1	;volatile
+   654                           
+   655                           ;./max7219.h: 109:     temporal = temporal & 0x0F00;
+   656  060B  3000               	movlw	0
+   657  060C  057C               	andwf	max7219_WriteComando@temporal,w	;volatile
+   658  060D  00FC               	movwf	max7219_WriteComando@temporal	;volatile
+   659  060E  300F               	movlw	15
+   660  060F  057D               	andwf	max7219_WriteComando@temporal+1,w	;volatile
+   661  0610  00FD               	movwf	max7219_WriteComando@temporal+1	;volatile
+   662                           
+   663                           ;./max7219.h: 110:     temporal = temporal | valorDeComando;
+   664  0611  087C               	movf	max7219_WriteComando@temporal,w	;volatile
+   665  0612  0478               	iorwf	max7219_WriteComando@valorDeComando,w
+   666  0613  00FC               	movwf	max7219_WriteComando@temporal	;volatile
+   667  0614  087D               	movf	max7219_WriteComando@temporal+1,w	;volatile
+   668  0615  00FD               	movwf	max7219_WriteComando@temporal+1	;volatile
+   669                           
+   670                           ;./max7219.h: 111:     max7219_WriteBits(temporal);
+   671  0616  087D               	movf	max7219_WriteComando@temporal+1,w	;volatile
+   672  0617  00F1               	movwf	max7219_WriteBits@valor+1
+   673  0618  087C               	movf	max7219_WriteComando@temporal,w	;volatile
+   674  0619  00F0               	movwf	max7219_WriteBits@valor
+   675  061A  120A  118A  2686   	fcall	_max7219_WriteBits
+   676  061D  0008               	return
+   677  061E                     __end_of_max7219_WriteComando:	
+   678                           
+   679                           	psect	text3
+   680  074F                     __ptext3:	
+   681 ;; *************** function _displayNumber *****************
+   682 ;; Defined at:
+   683 ;;		line 31 in file "main.c"
+   684 ;; Parameters:    Size  Location     Type
+   685 ;;  number          2    2[BANK0 ] int 
+   686 ;; Auto vars:     Size  Location     Type
+   687 ;;  pos             2    7[BANK0 ] int 
+   688 ;;  result          2    5[BANK0 ] int 
+   689 ;; Return value:  Size  Location     Type
+   690 ;;                  1    wreg      void 
+   691 ;; Registers used:
+   692 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   693 ;; Tracked objects:
+   694 ;;		On entry : 0/0
+   695 ;;		On exit  : 0/0
+   696 ;;		Unchanged: 0/0
+   697 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   698 ;;      Params:         0       2       0       0       0
+   699 ;;      Locals:         0       4       0       0       0
+   700 ;;      Temps:          0       1       0       0       0
+   701 ;;      Totals:         0       7       0       0       0
+   702 ;;Total ram usage:        7 bytes
+   703 ;; Hardware stack levels used:    1
+   704 ;; Hardware stack levels required when called:    3
+   705 ;; This function calls:
+   706 ;;		___awdiv
+   707 ;;		___awmod
+   708 ;;		_max7219_Clear
+   709 ;;		_max7219_WriteDigito
+   710 ;; This function is called by:
+   711 ;;		_main
+   712 ;; This function uses a non-reentrant model
+   713 ;;
+   714                           
+   715                           
+   716                           ;psect for function _displayNumber
+   717  074F                     _displayNumber:	
+   718                           
+   719                           ;main.c: 32:     int result;;main.c: 33:     int pos = 0 ;
+   720                           
+   721                           ;incstack = 0
+   722                           ; Regs used in _displayNumber: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   723  074F  1283               	bcf	3,5	;RP0=0, select bank0
+   724  0750  1303               	bcf	3,6	;RP1=0, select bank0
+   725  0751  01A7               	clrf	displayNumber@pos
+   726  0752  01A8               	clrf	displayNumber@pos+1
+   727                           
+   728                           ;main.c: 34:     max7219_Clear();
+   729  0753  120A  118A  25E5  120A  118A  	fcall	_max7219_Clear
+   730  0758                     l979:	
+   731                           ;main.c: 35:     while ( number > 0 ) {
+   732                           
+   733                           
+   734                           ;main.c: 35:     while ( number > 0 ) {
+   735  0758  1283               	bcf	3,5	;RP0=0, select bank0
+   736  0759  1303               	bcf	3,6	;RP1=0, select bank0
+   737  075A  0823               	movf	displayNumber@number+1,w
+   738  075B  3A80               	xorlw	128
+   739  075C  00FF               	movwf	127
+   740  075D  3080               	movlw	128
+   741  075E  027F               	subwf	127,w
+   742  075F  1D03               	skipz
+   743  0760  2F63               	goto	u525
+   744  0761  3001               	movlw	1
+   745  0762  0222               	subwf	displayNumber@number,w
+   746  0763                     u525:	
+   747  0763  1C03               	btfss	3,0
+   748  0764  0008               	return
+   749                           
+   750                           ;main.c: 36:         result = number % 10 ;
+   751  0765  300A               	movlw	10
+   752  0766  00F0               	movwf	___awmod@divisor
+   753  0767  3000               	movlw	0
+   754  0768  00F1               	movwf	___awmod@divisor+1
+   755  0769  1283               	bcf	3,5	;RP0=0, select bank0
+   756  076A  1303               	bcf	3,6	;RP1=0, select bank0
+   757  076B  0823               	movf	displayNumber@number+1,w
+   758  076C  00F3               	movwf	___awmod@dividend+1
+   759  076D  0822               	movf	displayNumber@number,w
+   760  076E  00F2               	movwf	___awmod@dividend
+   761  076F  120A  118A  2704  120A  118A  	fcall	___awmod
+   762  0774  0871               	movf	?___awmod+1,w
+   763  0775  1283               	bcf	3,5	;RP0=0, select bank0
+   764  0776  1303               	bcf	3,6	;RP1=0, select bank0
+   765  0777  00A6               	movwf	displayNumber@result+1
+   766  0778  0870               	movf	?___awmod,w
+   767  0779  00A5               	movwf	displayNumber@result
+   768                           
+   769                           ;main.c: 37:         number = number / 10 ;
+   770  077A  300A               	movlw	10
+   771  077B  00F0               	movwf	___awdiv@divisor
+   772  077C  3000               	movlw	0
+   773  077D  00F1               	movwf	___awdiv@divisor+1
+   774  077E  0823               	movf	displayNumber@number+1,w
+   775  077F  00F3               	movwf	___awdiv@dividend+1
+   776  0780  0822               	movf	displayNumber@number,w
+   777  0781  00F2               	movwf	___awdiv@dividend
+   778  0782  120A  118A  27A0  120A  118A  	fcall	___awdiv
+   779  0787  0871               	movf	?___awdiv+1,w
+   780  0788  1283               	bcf	3,5	;RP0=0, select bank0
+   781  0789  1303               	bcf	3,6	;RP1=0, select bank0
+   782  078A  00A3               	movwf	displayNumber@number+1
+   783  078B  0870               	movf	?___awdiv,w
+   784  078C  00A2               	movwf	displayNumber@number
+   785                           
+   786                           ;main.c: 38:         max7219_WriteDigito(pos++, result);
+   787  078D  0825               	movf	displayNumber@result,w
+   788  078E  00A4               	movwf	??_displayNumber
+   789  078F  0824               	movf	??_displayNumber,w
+   790  0790  00F8               	movwf	max7219_WriteDigito@valorDeDigito
+   791  0791  0827               	movf	displayNumber@pos,w
+   792  0792  120A  118A  261E  120A  118A  	fcall	_max7219_WriteDigito
+   793  0797  3001               	movlw	1
+   794  0798  1283               	bcf	3,5	;RP0=0, select bank0
+   795  0799  1303               	bcf	3,6	;RP1=0, select bank0
+   796  079A  07A7               	addwf	displayNumber@pos,f
+   797  079B  1803               	skipnc
+   798  079C  0AA8               	incf	displayNumber@pos+1,f
+   799  079D  3000               	movlw	0
+   800  079E  07A8               	addwf	displayNumber@pos+1,f
+   801  079F  2F58               	goto	l979
+   802  07A0                     __end_of_displayNumber:	
+   803                           
+   804                           	psect	text4
+   805  05E5                     __ptext4:	
+   806 ;; *************** function _max7219_Clear *****************
+   807 ;; Defined at:
+   808 ;;		line 114 in file "./max7219.h"
+   809 ;; Parameters:    Size  Location     Type
+   810 ;;		None
+   811 ;; Auto vars:     Size  Location     Type
+   812 ;;  i               1    1[BANK0 ] unsigned char 
+   813 ;; Return value:  Size  Location     Type
+   814 ;;                  1    wreg      void 
+   815 ;; Registers used:
+   816 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   817 ;; Tracked objects:
+   818 ;;		On entry : 0/0
+   819 ;;		On exit  : 0/0
+   820 ;;		Unchanged: 0/0
+   821 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   822 ;;      Params:         0       0       0       0       0
+   823 ;;      Locals:         0       1       0       0       0
+   824 ;;      Temps:          0       1       0       0       0
+   825 ;;      Totals:         0       2       0       0       0
+   826 ;;Total ram usage:        2 bytes
+   827 ;; Hardware stack levels used:    1
+   828 ;; Hardware stack levels required when called:    2
+   829 ;; This function calls:
+   830 ;;		_max7219_WriteDigito
+   831 ;; This function is called by:
+   832 ;;		_main
+   833 ;;		_displayNumber
+   834 ;; This function uses a non-reentrant model
+   835 ;;
+   836                           
+   837                           
+   838                           ;psect for function _max7219_Clear
+   839  05E5                     _max7219_Clear:	
+   840                           
+   841                           ;./max7219.h: 115:     for (char i = 0; i < 8; i++) {
+   842                           
+   843                           ;incstack = 0
+   844                           ; Regs used in _max7219_Clear: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   845  05E5  1283               	bcf	3,5	;RP0=0, select bank0
+   846  05E6  1303               	bcf	3,6	;RP1=0, select bank0
+   847  05E7  01A1               	clrf	max7219_Clear@i
+   848  05E8                     l877:	
+   849                           
+   850                           ;./max7219.h: 116:         max7219_WriteDigito(i, 0);
+   851  05E8  01F8               	clrf	max7219_WriteDigito@valorDeDigito
+   852  05E9  0821               	movf	max7219_Clear@i,w
+   853  05EA  120A  118A  261E  120A  118A  	fcall	_max7219_WriteDigito
+   854                           
+   855                           ;./max7219.h: 117:     }
+   856  05EF  3001               	movlw	1
+   857  05F0  1283               	bcf	3,5	;RP0=0, select bank0
+   858  05F1  1303               	bcf	3,6	;RP1=0, select bank0
+   859  05F2  00A0               	movwf	??_max7219_Clear
+   860  05F3  0820               	movf	??_max7219_Clear,w
+   861  05F4  07A1               	addwf	max7219_Clear@i,f
+   862  05F5  3008               	movlw	8
+   863  05F6  0221               	subwf	max7219_Clear@i,w
+   864  05F7  1803               	btfsc	3,0
+   865  05F8  0008               	return
+   866  05F9  2DE8               	goto	l877
+   867  05FA                     __end_of_max7219_Clear:	
+   868                           
+   869                           	psect	text5
+   870  061E                     __ptext5:	
+   871 ;; *************** function _max7219_WriteDigito *****************
+   872 ;; Defined at:
+   873 ;;		line 68 in file "./max7219.h"
+   874 ;; Parameters:    Size  Location     Type
+   875 ;;  digito          1    wreg     unsigned char 
+   876 ;;  valorDeDigit    1    8[COMMON] unsigned char 
+   877 ;; Auto vars:     Size  Location     Type
+   878 ;;  digito          1   11[COMMON] unsigned char 
+   879 ;;  temporal        2   12[COMMON] volatile unsigned int 
+   880 ;; Return value:  Size  Location     Type
+   881 ;;                  1    wreg      void 
+   882 ;; Registers used:
+   883 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   884 ;; Tracked objects:
+   885 ;;		On entry : 0/0
+   886 ;;		On exit  : 0/0
+   887 ;;		Unchanged: 0/0
+   888 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   889 ;;      Params:         1       0       0       0       0
+   890 ;;      Locals:         3       0       0       0       0
+   891 ;;      Temps:          2       0       0       0       0
+   892 ;;      Totals:         6       0       0       0       0
+   893 ;;Total ram usage:        6 bytes
+   894 ;; Hardware stack levels used:    1
+   895 ;; Hardware stack levels required when called:    1
+   896 ;; This function calls:
+   897 ;;		_max7219_WriteBits
+   898 ;; This function is called by:
+   899 ;;		_max7219_Clear
+   900 ;;		_displayNumber
+   901 ;; This function uses a non-reentrant model
+   902 ;;
+   903                           
+   904                           
+   905                           ;psect for function _max7219_WriteDigito
+   906  061E                     _max7219_WriteDigito:	
+   907                           
+   908                           ;incstack = 0
+   909                           ; Regs used in _max7219_WriteDigito: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   910                           ;max7219_WriteDigito@digito stored from wreg
+   911  061E  00FB               	movwf	max7219_WriteDigito@digito
+   912                           
+   913                           ;./max7219.h: 69:     volatile unsigned int temporal = 0;
+   914  061F  01FC               	clrf	max7219_WriteDigito@temporal	;volatile
+   915  0620  01FD               	clrf	max7219_WriteDigito@temporal+1	;volatile
+   916                           
+   917                           ;./max7219.h: 70:     if (digito > 7) {
+   918  0621  3008               	movlw	8
+   919  0622  027B               	subwf	max7219_WriteDigito@digito,w
+   920  0623  1803               	btfsc	3,0
+   921  0624  0008               	return
+   922                           
+   923                           ;./max7219.h: 73:     temporal = digito + 1;
+   924  0625  087B               	movf	max7219_WriteDigito@digito,w
+   925  0626  3E01               	addlw	1
+   926  0627  00FC               	movwf	max7219_WriteDigito@temporal	;volatile
+   927  0628  3000               	movlw	0
+   928  0629  1803               	skipnc
+   929  062A  3001               	movlw	1
+   930  062B  00FD               	movwf	max7219_WriteDigito@temporal+1	;volatile
+   931                           
+   932                           ;./max7219.h: 74:     temporal = temporal << 8;
+   933  062C  087C               	movf	max7219_WriteDigito@temporal,w	;volatile
+   934  062D  00FA               	movwf	??_max7219_WriteDigito+1
+   935  062E  01F9               	clrf	??_max7219_WriteDigito
+   936  062F  0879               	movf	??_max7219_WriteDigito,w
+   937  0630  00FC               	movwf	max7219_WriteDigito@temporal	;volatile
+   938  0631  087A               	movf	??_max7219_WriteDigito+1,w
+   939  0632  00FD               	movwf	max7219_WriteDigito@temporal+1	;volatile
+   940                           
+   941                           ;./max7219.h: 75:     temporal = temporal & 0x0F00;
+   942  0633  3000               	movlw	0
+   943  0634  057C               	andwf	max7219_WriteDigito@temporal,w	;volatile
+   944  0635  00FC               	movwf	max7219_WriteDigito@temporal	;volatile
+   945  0636  300F               	movlw	15
+   946  0637  057D               	andwf	max7219_WriteDigito@temporal+1,w	;volatile
+   947  0638  00FD               	movwf	max7219_WriteDigito@temporal+1	;volatile
+   948                           
+   949                           ;./max7219.h: 76:     temporal = temporal | digitos[valorDeDigito];
+   950  0639  0878               	movf	max7219_WriteDigito@valorDeDigito,w
+   951  063A  3E01               	addlw	low ((_digitos-__stringbase)| (0+32768))
+   952  063B  0084               	movwf	4
+   953  063C  120A  118A  2003  120A  118A  	fcall	stringdir
+   954  0641  00F9               	movwf	??_max7219_WriteDigito
+   955  0642  087C               	movf	max7219_WriteDigito@temporal,w	;volatile
+   956  0643  0479               	iorwf	??_max7219_WriteDigito,w
+   957  0644  00FC               	movwf	max7219_WriteDigito@temporal	;volatile
+   958  0645  087D               	movf	max7219_WriteDigito@temporal+1,w	;volatile
+   959  0646  00FD               	movwf	max7219_WriteDigito@temporal+1	;volatile
+   960                           
+   961                           ;./max7219.h: 77:     max7219_WriteBits(temporal);
+   962  0647  087D               	movf	max7219_WriteDigito@temporal+1,w	;volatile
+   963  0648  00F1               	movwf	max7219_WriteBits@valor+1
+   964  0649  087C               	movf	max7219_WriteDigito@temporal,w	;volatile
+   965  064A  00F0               	movwf	max7219_WriteBits@valor
+   966  064B  120A  118A  2686   	fcall	_max7219_WriteBits
+   967  064E  0008               	return
+   968  064F                     __end_of_max7219_WriteDigito:	
+   969                           
+   970                           	psect	text6
+   971  0686                     __ptext6:	
+   972 ;; *************** function _max7219_WriteBits *****************
+   973 ;; Defined at:
+   974 ;;		line 86 in file "./max7219.h"
+   975 ;; Parameters:    Size  Location     Type
+   976 ;;  valor           2    0[COMMON] unsigned int 
+   977 ;; Auto vars:     Size  Location     Type
+   978 ;;  temporal        2    5[COMMON] volatile unsigned int 
+   979 ;;  c               1    7[COMMON] volatile unsigned char 
+   980 ;; Return value:  Size  Location     Type
+   981 ;;                  1    wreg      void 
+   982 ;; Registers used:
+   983 ;;		wreg, status,2, status,0
+   984 ;; Tracked objects:
+   985 ;;		On entry : 0/0
+   986 ;;		On exit  : 0/0
+   987 ;;		Unchanged: 0/0
+   988 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   989 ;;      Params:         2       0       0       0       0
+   990 ;;      Locals:         3       0       0       0       0
+   991 ;;      Temps:          3       0       0       0       0
+   992 ;;      Totals:         8       0       0       0       0
+   993 ;;Total ram usage:        8 bytes
+   994 ;; Hardware stack levels used:    1
+   995 ;; This function calls:
+   996 ;;		Nothing
+   997 ;; This function is called by:
+   998 ;;		_max7219_WriteDigito
+   999 ;;		_max7219_WriteComando
+  1000 ;; This function uses a non-reentrant model
+  1001 ;;
+  1002                           
+  1003                           
+  1004                           ;psect for function _max7219_WriteBits
+  1005  0686                     _max7219_WriteBits:	
+  1006                           
+  1007                           ;./max7219.h: 87:     volatile unsigned int temporal = 0;
+  1008                           
+  1009                           ;incstack = 0
+  1010                           ; Regs used in _max7219_WriteBits: [wreg+status,2+status,0]
+  1011  0686  01F5               	clrf	max7219_WriteBits@temporal	;volatile
+  1012  0687  01F6               	clrf	max7219_WriteBits@temporal+1	;volatile
+  1013                           
+  1014                           ;./max7219.h: 88:     volatile unsigned char c = 0;
+  1015  0688  01F7               	clrf	max7219_WriteBits@c	;volatile
+  1016                           
+  1017                           ;./max7219.h: 89:     PORTCbits.RC6 = 0;
+  1018  0689  1283               	bcf	3,5	;RP0=0, select bank0
+  1019  068A  1303               	bcf	3,6	;RP1=0, select bank0
+  1020  068B  1307               	bcf	7,6	;volatile
+  1021                           
+  1022                           ;./max7219.h: 90:     for (c = 0; c < 16; c++) {
+  1023  068C  01F7               	clrf	max7219_WriteBits@c	;volatile
+  1024  068D                     l831:	
+  1025  068D  3010               	movlw	16
+  1026  068E  0277               	subwf	max7219_WriteBits@c,w	;volatile
+  1027  068F  1803               	btfsc	3,0
+  1028  0690  2EC0               	goto	l29
+  1029                           
+  1030                           ;./max7219.h: 91:         temporal = 1;
+  1031  0691  3001               	movlw	1
+  1032  0692  00F5               	movwf	max7219_WriteBits@temporal	;volatile
+  1033  0693  3000               	movlw	0
+  1034  0694  00F6               	movwf	max7219_WriteBits@temporal+1	;volatile
+  1035                           
+  1036                           ;./max7219.h: 92:         temporal = (temporal << (15 - c));
+  1037  0695  0877               	movf	max7219_WriteBits@c,w	;volatile
+  1038  0696  3C0F               	sublw	15
+  1039  0697  00F2               	movwf	??_max7219_WriteBits
+  1040  0698  0AF2               	incf	??_max7219_WriteBits,f
+  1041  0699  0876               	movf	max7219_WriteBits@temporal+1,w	;volatile
+  1042  069A  00F4               	movwf	??_max7219_WriteBits+2
+  1043  069B  0875               	movf	max7219_WriteBits@temporal,w	;volatile
+  1044  069C  00F3               	movwf	??_max7219_WriteBits+1
+  1045  069D  2EA1               	goto	u294
+  1046  069E                     u295:	
+  1047  069E  1003               	clrc
+  1048  069F  0DF3               	rlf	??_max7219_WriteBits+1,f
+  1049  06A0  0DF4               	rlf	??_max7219_WriteBits+2,f
+  1050  06A1                     u294:	
+  1051  06A1  0BF2               	decfsz	??_max7219_WriteBits,f
+  1052  06A2  2E9E               	goto	u295
+  1053  06A3  0873               	movf	??_max7219_WriteBits+1,w
+  1054  06A4  00F5               	movwf	max7219_WriteBits@temporal	;volatile
+  1055  06A5  0874               	movf	??_max7219_WriteBits+2,w
+  1056  06A6  00F6               	movwf	max7219_WriteBits@temporal+1	;volatile
+  1057                           
+  1058                           ;./max7219.h: 93:         if ((temporal & valor) != 0) {
+  1059  06A7  0870               	movf	max7219_WriteBits@valor,w
+  1060  06A8  0575               	andwf	max7219_WriteBits@temporal,w	;volatile
+  1061  06A9  00F2               	movwf	??_max7219_WriteBits
+  1062  06AA  0871               	movf	max7219_WriteBits@valor+1,w
+  1063  06AB  0576               	andwf	max7219_WriteBits@temporal+1,w	;volatile
+  1064  06AC  00F3               	movwf	??_max7219_WriteBits+1
+  1065  06AD  0872               	movf	??_max7219_WriteBits,w
+  1066  06AE  0473               	iorwf	??_max7219_WriteBits+1,w
+  1067  06AF  1903               	btfsc	3,2
+  1068  06B0  2EB3               	goto	l30
+  1069                           
+  1070                           ;./max7219.h: 94:             PORTCbits.RC5 = 1;
+  1071  06B1  1687               	bsf	7,5	;volatile
+  1072                           
+  1073                           ;./max7219.h: 95:         } else {
+  1074  06B2  2EB4               	goto	l31
+  1075  06B3                     l30:	
+  1076                           
+  1077                           ;./max7219.h: 96:             PORTCbits.RC5 = 0;
+  1078  06B3  1287               	bcf	7,5	;volatile
+  1079  06B4                     l31:	
+  1080                           ;./max7219.h: 97:         }
+  1081                           
+  1082                           
+  1083                           ;./max7219.h: 98:         PORTCbits.RC7 = 1;
+  1084  06B4  1787               	bsf	7,7	;volatile
+  1085                           
+  1086                           ;./max7219.h: 99:             _delay((unsigned long)((1)*(20000000/4000000.0)));
+  1087  06B5  2EB6               	nop2	;2 cycle nop
+  1088  06B6  2EB7               	nop2	;2 cycle nop
+  1089  06B7  0000               	nop
+  1090                           
+  1091                           ;./max7219.h: 100:         PORTCbits.RC7 = 0;
+  1092  06B8  1283               	bcf	3,5	;RP0=0, select bank0
+  1093  06B9  1303               	bcf	3,6	;RP1=0, select bank0
+  1094  06BA  1387               	bcf	7,7	;volatile
+  1095                           
+  1096                           ;./max7219.h: 101:     }
+  1097  06BB  3001               	movlw	1
+  1098  06BC  00F2               	movwf	??_max7219_WriteBits
+  1099  06BD  0872               	movf	??_max7219_WriteBits,w
+  1100  06BE  07F7               	addwf	max7219_WriteBits@c,f	;volatile
+  1101  06BF  2E8D               	goto	l831
+  1102  06C0                     l29:	
+  1103                           
+  1104                           ;./max7219.h: 102:     PORTCbits.RC6 = 1;
+  1105  06C0  1707               	bsf	7,6	;volatile
+  1106  06C1  0008               	return
+  1107  06C2                     __end_of_max7219_WriteBits:	
+  1108                           
+  1109                           	psect	text7
+  1110  0704                     __ptext7:	
+  1111 ;; *************** function ___awmod *****************
+  1112 ;; Defined at:
+  1113 ;;		line 5 in file "C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c"
+  1114 ;; Parameters:    Size  Location     Type
+  1115 ;;  divisor         2    0[COMMON] int 
+  1116 ;;  dividend        2    2[COMMON] int 
+  1117 ;; Auto vars:     Size  Location     Type
+  1118 ;;  sign            1    6[COMMON] unsigned char 
+  1119 ;;  counter         1    5[COMMON] unsigned char 
+  1120 ;; Return value:  Size  Location     Type
+  1121 ;;                  2    0[COMMON] int 
+  1122 ;; Registers used:
+  1123 ;;		wreg, status,2, status,0
+  1124 ;; Tracked objects:
+  1125 ;;		On entry : 0/0
+  1126 ;;		On exit  : 0/0
+  1127 ;;		Unchanged: 0/0
+  1128 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1129 ;;      Params:         4       0       0       0       0
+  1130 ;;      Locals:         2       0       0       0       0
+  1131 ;;      Temps:          1       0       0       0       0
+  1132 ;;      Totals:         7       0       0       0       0
+  1133 ;;Total ram usage:        7 bytes
+  1134 ;; Hardware stack levels used:    1
+  1135 ;; This function calls:
+  1136 ;;		Nothing
+  1137 ;; This function is called by:
+  1138 ;;		_displayNumber
+  1139 ;; This function uses a non-reentrant model
+  1140 ;;
+  1141                           
+  1142                           
+  1143                           ;psect for function ___awmod
+  1144  0704                     ___awmod:	
+  1145                           
+  1146                           ;incstack = 0
+  1147                           ; Regs used in ___awmod: [wreg+status,2+status,0]
+  1148  0704  01F6               	clrf	___awmod@sign
+  1149  0705  1FF3               	btfss	___awmod@dividend+1,7
+  1150  0706  2F0E               	goto	l935
+  1151  0707  09F2               	comf	___awmod@dividend,f
+  1152  0708  09F3               	comf	___awmod@dividend+1,f
+  1153  0709  0AF2               	incf	___awmod@dividend,f
+  1154  070A  1903               	skipnz
+  1155  070B  0AF3               	incf	___awmod@dividend+1,f
+  1156  070C  01F6               	clrf	___awmod@sign
+  1157  070D  0AF6               	incf	___awmod@sign,f
+  1158  070E                     l935:	
+  1159  070E  1FF1               	btfss	___awmod@divisor+1,7
+  1160  070F  2F15               	goto	l939
+  1161  0710  09F0               	comf	___awmod@divisor,f
+  1162  0711  09F1               	comf	___awmod@divisor+1,f
+  1163  0712  0AF0               	incf	___awmod@divisor,f
+  1164  0713  1903               	skipnz
+  1165  0714  0AF1               	incf	___awmod@divisor+1,f
+  1166  0715                     l939:	
+  1167  0715  0870               	movf	___awmod@divisor,w
+  1168  0716  0471               	iorwf	___awmod@divisor+1,w
+  1169  0717  1903               	btfsc	3,2
+  1170  0718  2F42               	goto	l957
+  1171  0719  01F5               	clrf	___awmod@counter
+  1172  071A  0AF5               	incf	___awmod@counter,f
+  1173  071B                     l947:	
+  1174  071B  1BF1               	btfsc	___awmod@divisor+1,7
+  1175  071C  2F29               	goto	l949
+  1176  071D  3001               	movlw	1
+  1177  071E                     u465:	
+  1178  071E  1003               	clrc
+  1179  071F  0DF0               	rlf	___awmod@divisor,f
+  1180  0720  0DF1               	rlf	___awmod@divisor+1,f
+  1181  0721  3EFF               	addlw	-1
+  1182  0722  1D03               	skipz
+  1183  0723  2F1E               	goto	u465
+  1184  0724  3001               	movlw	1
+  1185  0725  00F4               	movwf	??___awmod
+  1186  0726  0874               	movf	??___awmod,w
+  1187  0727  07F5               	addwf	___awmod@counter,f
+  1188  0728  2F1B               	goto	l947
+  1189  0729                     l949:	
+  1190  0729  0871               	movf	___awmod@divisor+1,w
+  1191  072A  0273               	subwf	___awmod@dividend+1,w
+  1192  072B  1D03               	skipz
+  1193  072C  2F2F               	goto	u485
+  1194  072D  0870               	movf	___awmod@divisor,w
+  1195  072E  0272               	subwf	___awmod@dividend,w
+  1196  072F                     u485:	
+  1197  072F  1C03               	skipc
+  1198  0730  2F37               	goto	l953
+  1199  0731  0870               	movf	___awmod@divisor,w
+  1200  0732  02F2               	subwf	___awmod@dividend,f
+  1201  0733  0871               	movf	___awmod@divisor+1,w
+  1202  0734  1C03               	skipc
+  1203  0735  03F3               	decf	___awmod@dividend+1,f
+  1204  0736  02F3               	subwf	___awmod@dividend+1,f
+  1205  0737                     l953:	
+  1206  0737  3001               	movlw	1
+  1207  0738                     u495:	
+  1208  0738  1003               	clrc
+  1209  0739  0CF1               	rrf	___awmod@divisor+1,f
+  1210  073A  0CF0               	rrf	___awmod@divisor,f
+  1211  073B  3EFF               	addlw	-1
+  1212  073C  1D03               	skipz
+  1213  073D  2F38               	goto	u495
+  1214  073E  3001               	movlw	1
+  1215  073F  02F5               	subwf	___awmod@counter,f
+  1216  0740  1D03               	btfss	3,2
+  1217  0741  2F29               	goto	l949
+  1218  0742                     l957:	
+  1219  0742  0876               	movf	___awmod@sign,w
+  1220  0743  1903               	btfsc	3,2
+  1221  0744  2F4A               	goto	l961
+  1222  0745  09F2               	comf	___awmod@dividend,f
+  1223  0746  09F3               	comf	___awmod@dividend+1,f
+  1224  0747  0AF2               	incf	___awmod@dividend,f
+  1225  0748  1903               	skipnz
+  1226  0749  0AF3               	incf	___awmod@dividend+1,f
+  1227  074A                     l961:	
+  1228  074A  0873               	movf	___awmod@dividend+1,w
+  1229  074B  00F1               	movwf	?___awmod+1
+  1230  074C  0872               	movf	___awmod@dividend,w
+  1231  074D  00F0               	movwf	?___awmod
+  1232  074E  0008               	return
+  1233  074F                     __end_of___awmod:	
+  1234                           
+  1235                           	psect	text8
+  1236  07A0                     __ptext8:	
+  1237 ;; *************** function ___awdiv *****************
+  1238 ;; Defined at:
+  1239 ;;		line 5 in file "C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c"
+  1240 ;; Parameters:    Size  Location     Type
+  1241 ;;  divisor         2    0[COMMON] int 
+  1242 ;;  dividend        2    2[COMMON] int 
+  1243 ;; Auto vars:     Size  Location     Type
+  1244 ;;  quotient        2    7[COMMON] int 
+  1245 ;;  sign            1    6[COMMON] unsigned char 
+  1246 ;;  counter         1    5[COMMON] unsigned char 
+  1247 ;; Return value:  Size  Location     Type
+  1248 ;;                  2    0[COMMON] int 
+  1249 ;; Registers used:
+  1250 ;;		wreg, status,2, status,0
+  1251 ;; Tracked objects:
+  1252 ;;		On entry : 0/0
+  1253 ;;		On exit  : 0/0
+  1254 ;;		Unchanged: 0/0
+  1255 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1256 ;;      Params:         4       0       0       0       0
+  1257 ;;      Locals:         4       0       0       0       0
+  1258 ;;      Temps:          1       0       0       0       0
+  1259 ;;      Totals:         9       0       0       0       0
+  1260 ;;Total ram usage:        9 bytes
+  1261 ;; Hardware stack levels used:    1
+  1262 ;; This function calls:
+  1263 ;;		Nothing
+  1264 ;; This function is called by:
+  1265 ;;		_displayNumber
+  1266 ;; This function uses a non-reentrant model
+  1267 ;;
+  1268                           
+  1269                           
+  1270                           ;psect for function ___awdiv
+  1271  07A0                     ___awdiv:	
+  1272                           
+  1273                           ;incstack = 0
+  1274                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+  1275  07A0  01F6               	clrf	___awdiv@sign
+  1276  07A1  1FF1               	btfss	___awdiv@divisor+1,7
+  1277  07A2  2FAA               	goto	l891
+  1278  07A3  09F0               	comf	___awdiv@divisor,f
+  1279  07A4  09F1               	comf	___awdiv@divisor+1,f
+  1280  07A5  0AF0               	incf	___awdiv@divisor,f
+  1281  07A6  1903               	skipnz
+  1282  07A7  0AF1               	incf	___awdiv@divisor+1,f
+  1283  07A8  01F6               	clrf	___awdiv@sign
+  1284  07A9  0AF6               	incf	___awdiv@sign,f
+  1285  07AA                     l891:	
+  1286  07AA  1FF3               	btfss	___awdiv@dividend+1,7
+  1287  07AB  2FB5               	goto	l897
+  1288  07AC  09F2               	comf	___awdiv@dividend,f
+  1289  07AD  09F3               	comf	___awdiv@dividend+1,f
+  1290  07AE  0AF2               	incf	___awdiv@dividend,f
+  1291  07AF  1903               	skipnz
+  1292  07B0  0AF3               	incf	___awdiv@dividend+1,f
+  1293  07B1  3001               	movlw	1
+  1294  07B2  00F4               	movwf	??___awdiv
+  1295  07B3  0874               	movf	??___awdiv,w
+  1296  07B4  06F6               	xorwf	___awdiv@sign,f
+  1297  07B5                     l897:	
+  1298  07B5  01F7               	clrf	___awdiv@quotient
+  1299  07B6  01F8               	clrf	___awdiv@quotient+1
+  1300  07B7  0870               	movf	___awdiv@divisor,w
+  1301  07B8  0471               	iorwf	___awdiv@divisor+1,w
+  1302  07B9  1903               	btfsc	3,2
+  1303  07BA  2FEC               	goto	l919
+  1304  07BB  01F5               	clrf	___awdiv@counter
+  1305  07BC  0AF5               	incf	___awdiv@counter,f
+  1306  07BD                     l907:	
+  1307  07BD  1BF1               	btfsc	___awdiv@divisor+1,7
+  1308  07BE  2FCB               	goto	l909
+  1309  07BF  3001               	movlw	1
+  1310  07C0                     u365:	
+  1311  07C0  1003               	clrc
+  1312  07C1  0DF0               	rlf	___awdiv@divisor,f
+  1313  07C2  0DF1               	rlf	___awdiv@divisor+1,f
+  1314  07C3  3EFF               	addlw	-1
+  1315  07C4  1D03               	skipz
+  1316  07C5  2FC0               	goto	u365
+  1317  07C6  3001               	movlw	1
+  1318  07C7  00F4               	movwf	??___awdiv
+  1319  07C8  0874               	movf	??___awdiv,w
+  1320  07C9  07F5               	addwf	___awdiv@counter,f
+  1321  07CA  2FBD               	goto	l907
+  1322  07CB                     l909:	
+  1323  07CB  3001               	movlw	1
+  1324  07CC                     u385:	
+  1325  07CC  1003               	clrc
+  1326  07CD  0DF7               	rlf	___awdiv@quotient,f
+  1327  07CE  0DF8               	rlf	___awdiv@quotient+1,f
+  1328  07CF  3EFF               	addlw	-1
+  1329  07D0  1D03               	skipz
+  1330  07D1  2FCC               	goto	u385
+  1331  07D2  0871               	movf	___awdiv@divisor+1,w
+  1332  07D3  0273               	subwf	___awdiv@dividend+1,w
+  1333  07D4  1D03               	skipz
+  1334  07D5  2FD8               	goto	u395
+  1335  07D6  0870               	movf	___awdiv@divisor,w
+  1336  07D7  0272               	subwf	___awdiv@dividend,w
+  1337  07D8                     u395:	
+  1338  07D8  1C03               	skipc
+  1339  07D9  2FE1               	goto	l915
+  1340  07DA  0870               	movf	___awdiv@divisor,w
+  1341  07DB  02F2               	subwf	___awdiv@dividend,f
+  1342  07DC  0871               	movf	___awdiv@divisor+1,w
+  1343  07DD  1C03               	skipc
+  1344  07DE  03F3               	decf	___awdiv@dividend+1,f
+  1345  07DF  02F3               	subwf	___awdiv@dividend+1,f
+  1346  07E0  1477               	bsf	___awdiv@quotient,0
+  1347  07E1                     l915:	
+  1348  07E1  3001               	movlw	1
+  1349  07E2                     u405:	
+  1350  07E2  1003               	clrc
+  1351  07E3  0CF1               	rrf	___awdiv@divisor+1,f
+  1352  07E4  0CF0               	rrf	___awdiv@divisor,f
+  1353  07E5  3EFF               	addlw	-1
+  1354  07E6  1D03               	skipz
+  1355  07E7  2FE2               	goto	u405
+  1356  07E8  3001               	movlw	1
+  1357  07E9  02F5               	subwf	___awdiv@counter,f
+  1358  07EA  1D03               	btfss	3,2
+  1359  07EB  2FCB               	goto	l909
+  1360  07EC                     l919:	
+  1361  07EC  0876               	movf	___awdiv@sign,w
+  1362  07ED  1903               	btfsc	3,2
+  1363  07EE  2FF4               	goto	l923
+  1364  07EF  09F7               	comf	___awdiv@quotient,f
+  1365  07F0  09F8               	comf	___awdiv@quotient+1,f
+  1366  07F1  0AF7               	incf	___awdiv@quotient,f
+  1367  07F2  1903               	skipnz
+  1368  07F3  0AF8               	incf	___awdiv@quotient+1,f
+  1369  07F4                     l923:	
+  1370  07F4  0878               	movf	___awdiv@quotient+1,w
+  1371  07F5  00F1               	movwf	?___awdiv+1
+  1372  07F6  0877               	movf	___awdiv@quotient,w
+  1373  07F7  00F0               	movwf	?___awdiv
+  1374  07F8  0008               	return
+  1375  07F9                     __end_of___awdiv:	
+  1376  007E                     btemp	set	126	;btemp
+  1377  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    10
+    Data        0
+    BSS         1
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80     14      15
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _max7219_Config->_max7219_WriteComando
+    _max7219_WriteComando->_max7219_WriteBits
+    _displayNumber->_max7219_WriteDigito
+    _max7219_Clear->_max7219_WriteDigito
+    _max7219_WriteDigito->_max7219_WriteBits
+
+Critical Paths under _main in BANK0
+
+    _main->_displayNumber
+    _displayNumber->_max7219_Clear
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0    3980
+                                              9 BANK0      5     5      0
+                      _displayNumber
+                      _max7219_Clear
+                     _max7219_Config
+ ---------------------------------------------------------------------------------
+ (1) _max7219_Config                                       1     1      0     883
+                                              0 BANK0      1     1      0
+               _max7219_WriteComando
+ ---------------------------------------------------------------------------------
+ (2) _max7219_WriteComando                                 6     5      1     883
+                                              8 COMMON     6     5      1
+                  _max7219_WriteBits
+ ---------------------------------------------------------------------------------
+ (1) _displayNumber                                        7     5      2    2360
+                                              2 BANK0      7     5      2
+                            ___awdiv
+                            ___awmod
+                      _max7219_Clear
+                _max7219_WriteDigito
+ ---------------------------------------------------------------------------------
+ (1) _max7219_Clear                                        2     2      0     669
+                                              0 BANK0      2     2      0
+                _max7219_WriteDigito
+ ---------------------------------------------------------------------------------
+ (2) _max7219_WriteDigito                                  6     5      1     601
+                                              8 COMMON     6     5      1
+                  _max7219_WriteBits
+ ---------------------------------------------------------------------------------
+ (3) _max7219_WriteBits                                    8     6      2     290
+                                              0 COMMON     8     6      2
+ ---------------------------------------------------------------------------------
+ (2) ___awmod                                              7     3      4     448
+                                              0 COMMON     7     3      4
+ ---------------------------------------------------------------------------------
+ (2) ___awdiv                                              9     5      4     452
+                                              0 COMMON     9     5      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _displayNumber
+     ___awdiv
+     ___awmod
+     _max7219_Clear
+       _max7219_WriteDigito
+         _max7219_WriteBits
+     _max7219_WriteDigito
+       _max7219_WriteBits
+   _max7219_Clear
+     _max7219_WriteDigito
+       _max7219_WriteBits
+   _max7219_Config
+     _max7219_WriteComando
+       _max7219_WriteBits
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      E       E       1      100.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      1D       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      E       F       5       18.8%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0      1D      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Sat Aug 29 00:02:17 2020
+
+                                 pc 0002                         __CFG_CP$OFF 0000  
+                                l30 06B3                                  l31 06B4  
+                                l29 06C0                        ___awdiv@sign 0076  
+                                fsr 0004        __size_of_max7219_WriteDigito 0031  
+                       __CFG_LVP$ON 0000                                 l831 068D  
+                               l923 07F4                                 l915 07E1  
+                               l907 07BD                                 l909 07CB  
+                               l919 07EC                                 l935 070E  
+                               l961 074A                                 l953 0737  
+                               l891 07AA                                 l947 071B  
+                               l939 0715                                 l949 0729  
+                               l957 0742                                 l877 05E8  
+                               l897 07B5                                 l979 0758  
+                               l999 06D4                                 u405 07E2  
+                      __CFG_CPD$OFF 0000                                 u365 07C0  
+                               u525 0763                                 u294 06A1  
+                               u295 069E                                 u385 07CC  
+                               u465 071E                                 u545 06FF  
+                               u395 07D8                                 u485 072F  
+                               u557 06E7                                 u495 0738  
+             __end_of_max7219_Clear 05FA                                 fsr0 0004  
+                      ___awmod@sign 0076                        __CFG_FOSC$HS 0000  
+max7219_WriteComando@valorDeComando 0078                      ?_displayNumber 0022  
+     __size_of_max7219_WriteComando 0024                        __CFG_WRT$OFF 0000  
+                              _cont 002E                                _main 06C2  
+                              btemp 007E              __end_of_max7219_Config 0686  
+                     __CFG_BOREN$ON 0000                                start 0000  
+                 _max7219_WriteBits 0686                  ?_max7219_WriteBits 0070  
+      max7219_WriteComando@temporal 007C                               ?_main 0070  
+                   __end_of___awdiv 07F9                 ??_max7219_WriteBits 0072  
+                     __CFG_WDTE$OFF 0000                     __end_of___awmod 074F  
+                   ___awdiv@divisor 0070                     ___awdiv@counter 0075  
+                   __end_of_digitos 0013                               main@i 002C  
+                             pclath 000A                               status 0003  
+                             wtemp0 007E           __end_of_max7219_WriteBits 06C2  
+                   ?_max7219_Config 0070                     __initialization 07F9  
+                      __end_of_main 0704                 displayNumber@number 0022  
+               displayNumber@result 0025                              ??_main 0029  
+                   ??_displayNumber 0024                    ___awdiv@dividend 0072  
+         max7219_WriteDigito@digito 007B           max7219_WriteBits@temporal 0075  
+                    __CFG_PWRTE$OFF 0000                           ??___awdiv 0074  
+                         ??___awmod 0074                    ___awdiv@quotient 0077  
+                   ___awmod@divisor 0070                     ___awmod@counter 0075  
+           __end_of__initialization 07FC                 _max7219_WriteDigito 061E  
+        __size_of_max7219_WriteBits 003C                      __pcstackCOMMON 0070  
+              ?_max7219_WriteDigito 0078                          __pbssBANK0 002E  
+            max7219_WriteBits@valor 0070                          __pmaintext 06C2  
+      __end_of_max7219_WriteComando 061E               ??_max7219_WriteDigito 0079  
+                  ??_max7219_Config 0020                          __stringtab 0003  
+            __size_of_max7219_Clear 0015                             ___awdiv 07A0  
+                           ___awmod 0704                             _digitos 0009  
+                           __ptext1 064F                             __ptext2 05FA  
+                           __ptext3 074F                             __ptext4 05E5  
+                           __ptext5 061E                             __ptext6 0686  
+                           __ptext7 0704                             __ptext8 07A0  
+                  ___awmod@dividend 0072                end_of_initialization 07FC  
+                         _PORTCbits 0007                       _max7219_Clear 05E5  
+                         _TRISCbits 0087               __end_of_displayNumber 07A0  
+              _max7219_WriteComando 05FA         max7219_WriteComando@comando 007B  
+                    max7219_Clear@i 0021                      ?_max7219_Clear 0070  
+               start_initialization 07F9               ?_max7219_WriteComando 0078  
+                         ___latbits 0002                       __pcstackBANK0 0020  
+       __end_of_max7219_WriteDigito 064F                            ?___awdiv 0070  
+                          ?___awmod 0070                           __pstrings 0003  
+                   ??_max7219_Clear 0020              ??_max7219_WriteComando 0079  
+                       __stringbase 0008                    displayNumber@pos 0027  
+           __size_of_max7219_Config 0037                    __size_of___awdiv 0059  
+                  __size_of___awmod 004B                  __end_of__stringtab 0009  
+                     __size_of_main 0042              __size_of_displayNumber 0051  
+                max7219_WriteBits@c 0077    max7219_WriteDigito@valorDeDigito 0078  
+                         stringcode 0003         max7219_WriteDigito@temporal 007C  
+                          stringdir 0003                            stringtab 0003  
+                     _displayNumber 074F                      _max7219_Config 064F  

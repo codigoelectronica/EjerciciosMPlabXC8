@@ -1,0 +1,516 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1443 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\include\PIC16f877A.h
+[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S58 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1442
+[u S57 `S58 1 ]
+[n S57 . . ]
+"1454
+[v _TRISCbits `VS57 ~T0 @X0 0 e@135 ]
+"284
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"283
+[u S9 `S10 1 ]
+[n S9 . . ]
+"295
+[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
+"48 ./max7219.h
+[; ;./max7219.h: 48: void max7219_WriteComando(unsigned char, unsigned char);
+[v _max7219_WriteComando `(v ~T0 @X0 0 ef2`uc`uc ]
+"47
+[; ;./max7219.h: 47: void max7219_WriteBits(unsigned int);
+[v _max7219_WriteBits `(v ~T0 @X0 0 ef1`ui ]
+[v F842 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
+[v __delay `JF842 ~T0 @X0 0 e ]
+[p i __delay ]
+[p mainexit ]
+"1375 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\include\PIC16f877A.h
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"7 main.c
+[; ;main.c: 7: void displayNumber( int number);
+[v _displayNumber `(v ~T0 @X0 0 ef1`i ]
+"54 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\include\PIC16f877A.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"218
+[; <" PORTB equ 06h ;# ">
+"280
+[; <" PORTC equ 07h ;# ">
+"342
+[; <" PORTD equ 08h ;# ">
+"404
+[; <" PORTE equ 09h ;# ">
+"436
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; <" T1CON equ 010h ;# ">
+"732
+[; <" TMR2 equ 011h ;# ">
+"739
+[; <" T2CON equ 012h ;# ">
+"810
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; <" SSPCON equ 014h ;# ">
+"887
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; <" TXREG equ 019h ;# ">
+"1068
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; <" TRISA equ 085h ;# ">
+"1377
+[; <" TRISB equ 086h ;# ">
+"1439
+[; <" TRISC equ 087h ;# ">
+"1501
+[; <" TRISD equ 088h ;# ">
+"1563
+[; <" TRISE equ 089h ;# ">
+"1620
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; <" PR2 equ 092h ;# ">
+"1825
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; <" EECON2 equ 018Dh ;# ">
+"1 ./config.h
+[p x FOSC = HS ]
+"2
+[p x WDTE = OFF ]
+"3
+[p x PWRTE = OFF ]
+"4
+[p x BOREN = ON ]
+"5
+[p x LVP = ON ]
+"6
+[p x CPD = OFF ]
+"7
+[p x WRT = OFF ]
+"8
+[p x CP = OFF ]
+"29 ./max7219.h
+[; ;./max7219.h: 29: static const unsigned char digitos[10] = {
+[v _digitos `Cuc ~T0 @X0 -> 10 `i s ]
+[i _digitos
+:U ..
+-> -> 126 `i `uc
+-> -> 48 `i `uc
+-> -> 109 `i `uc
+-> -> 121 `i `uc
+-> -> 51 `i `uc
+-> -> 91 `i `uc
+-> -> 95 `i `uc
+-> -> 112 `i `uc
+-> -> 127 `i `uc
+-> -> 123 `i `uc
+..
+]
+"51
+[; ;./max7219.h: 51: void max7219_Config(void) {
+[v _max7219_Config `(v ~T0 @X0 1 ef ]
+{
+[e :U _max7219_Config ]
+[f ]
+"52
+[; ;./max7219.h: 52:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"53
+[; ;./max7219.h: 53:     TRISCbits.TRISC7 = 0;
+[e = . . _TRISCbits 0 7 -> -> 0 `i `uc ]
+"54
+[; ;./max7219.h: 54:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+"56
+[; ;./max7219.h: 56:     PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"57
+[; ;./max7219.h: 57:     PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"58
+[; ;./max7219.h: 58:     PORTCbits.RC6 = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+"60
+[; ;./max7219.h: 60:     max7219_WriteComando(0x0C, 0x00);
+[e ( _max7219_WriteComando (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"61
+[; ;./max7219.h: 61:     max7219_WriteComando(0x0F, 0x00);
+[e ( _max7219_WriteComando (2 , -> -> 15 `i `uc -> -> 0 `i `uc ]
+"62
+[; ;./max7219.h: 62:     max7219_WriteComando(0x0A, 0x0F);
+[e ( _max7219_WriteComando (2 , -> -> 10 `i `uc -> -> 15 `i `uc ]
+"63
+[; ;./max7219.h: 63:     max7219_WriteComando(0x0B, 0x07);
+[e ( _max7219_WriteComando (2 , -> -> 11 `i `uc -> -> 7 `i `uc ]
+"64
+[; ;./max7219.h: 64:     max7219_WriteComando(0x0C, 0x01);
+[e ( _max7219_WriteComando (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+"66
+[; ;./max7219.h: 66: }
+[e :UE 95 ]
+}
+"68
+[; ;./max7219.h: 68: void max7219_WriteDigito(unsigned char digito, unsigned char valorDeDigito) {
+[v _max7219_WriteDigito `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _max7219_WriteDigito ]
+[v _digito `uc ~T0 @X0 1 r1 ]
+[v _valorDeDigito `uc ~T0 @X0 1 r2 ]
+[f ]
+"69
+[; ;./max7219.h: 69:     volatile unsigned int temporal = 0;
+[v _temporal `Vui ~T0 @X0 1 a ]
+[e = _temporal -> -> 0 `i `ui ]
+"70
+[; ;./max7219.h: 70:     if (digito > 7) {
+[e $ ! > -> _digito `i -> 7 `i 97  ]
+{
+"71
+[; ;./max7219.h: 71:         return;
+[e $UE 96  ]
+"72
+[; ;./max7219.h: 72:     }
+}
+[e :U 97 ]
+"73
+[; ;./max7219.h: 73:     temporal = digito + 1;
+[e = _temporal -> + -> _digito `i -> 1 `i `ui ]
+"74
+[; ;./max7219.h: 74:     temporal = temporal << 8;
+[e = _temporal << _temporal -> 8 `i ]
+"75
+[; ;./max7219.h: 75:     temporal = temporal & 0x0F00;
+[e = _temporal & _temporal -> -> 3840 `i `ui ]
+"76
+[; ;./max7219.h: 76:     temporal = temporal | digitos[valorDeDigito];
+[e = _temporal | _temporal -> *U + &U _digitos * -> _valorDeDigito `ux -> -> # *U &U _digitos `ui `ux `ui ]
+"77
+[; ;./max7219.h: 77:     max7219_WriteBits(temporal);
+[e ( _max7219_WriteBits (1 _temporal ]
+"78
+[; ;./max7219.h: 78: }
+[e :UE 96 ]
+}
+"80
+[; ;./max7219.h: 80: void max7219_Intensity(unsigned char value) {
+[v _max7219_Intensity `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _max7219_Intensity ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"81
+[; ;./max7219.h: 81:     if (value < 16) {
+[e $ ! < -> _value `i -> 16 `i 99  ]
+{
+"82
+[; ;./max7219.h: 82:         max7219_WriteComando(0x0A, value);
+[e ( _max7219_WriteComando (2 , -> -> 10 `i `uc _value ]
+"83
+[; ;./max7219.h: 83:     }
+}
+[e :U 99 ]
+"84
+[; ;./max7219.h: 84: }
+[e :UE 98 ]
+}
+"86
+[; ;./max7219.h: 86: void max7219_WriteBits(unsigned int valor) {
+[v _max7219_WriteBits `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _max7219_WriteBits ]
+[v _valor `ui ~T0 @X0 1 r1 ]
+[f ]
+"87
+[; ;./max7219.h: 87:     volatile unsigned int temporal = 0;
+[v _temporal `Vui ~T0 @X0 1 a ]
+[e = _temporal -> -> 0 `i `ui ]
+"88
+[; ;./max7219.h: 88:     volatile unsigned char c = 0;
+[v _c `Vuc ~T0 @X0 1 a ]
+[e = _c -> -> 0 `i `uc ]
+"89
+[; ;./max7219.h: 89:     PORTCbits.RC6 = 0;
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+"90
+[; ;./max7219.h: 90:     for (c = 0; c < 16; c++) {
+{
+[e = _c -> -> 0 `i `uc ]
+[e $ < -> _c `i -> 16 `i 101  ]
+[e $U 102  ]
+[e :U 101 ]
+{
+"91
+[; ;./max7219.h: 91:         temporal = 1;
+[e = _temporal -> -> 1 `i `ui ]
+"92
+[; ;./max7219.h: 92:         temporal = (temporal << (15 - c));
+[e = _temporal << _temporal - -> 15 `i -> _c `i ]
+"93
+[; ;./max7219.h: 93:         if ((temporal & valor) != 0) {
+[e $ ! != & _temporal _valor -> -> 0 `i `ui 104  ]
+{
+"94
+[; ;./max7219.h: 94:             PORTCbits.RC5 = 1;
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+"95
+[; ;./max7219.h: 95:         } else {
+}
+[e $U 105  ]
+[e :U 104 ]
+{
+"96
+[; ;./max7219.h: 96:             PORTCbits.RC5 = 0;
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+"97
+[; ;./max7219.h: 97:         }
+}
+[e :U 105 ]
+"98
+[; ;./max7219.h: 98:         PORTCbits.RC7 = 1;
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+"99
+[; ;./max7219.h: 99:             _delay((unsigned long)((1)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"100
+[; ;./max7219.h: 100:         PORTCbits.RC7 = 0;
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+"101
+[; ;./max7219.h: 101:     }
+}
+[e ++ _c -> -> 1 `i `Vuc ]
+[e $ < -> _c `i -> 16 `i 101  ]
+[e :U 102 ]
+}
+"102
+[; ;./max7219.h: 102:     PORTCbits.RC6 = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+"103
+[; ;./max7219.h: 103: }
+[e :UE 100 ]
+}
+"105
+[; ;./max7219.h: 105: void max7219_WriteComando(unsigned char comando, unsigned char valorDeComando) {
+[v _max7219_WriteComando `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _max7219_WriteComando ]
+[v _comando `uc ~T0 @X0 1 r1 ]
+[v _valorDeComando `uc ~T0 @X0 1 r2 ]
+[f ]
+"106
+[; ;./max7219.h: 106:     volatile unsigned int temporal = 0;
+[v _temporal `Vui ~T0 @X0 1 a ]
+[e = _temporal -> -> 0 `i `ui ]
+"107
+[; ;./max7219.h: 107:     temporal = comando;
+[e = _temporal -> _comando `ui ]
+"108
+[; ;./max7219.h: 108:     temporal = temporal << 8;
+[e = _temporal << _temporal -> 8 `i ]
+"109
+[; ;./max7219.h: 109:     temporal = temporal & 0x0F00;
+[e = _temporal & _temporal -> -> 3840 `i `ui ]
+"110
+[; ;./max7219.h: 110:     temporal = temporal | valorDeComando;
+[e = _temporal | _temporal -> _valorDeComando `ui ]
+"111
+[; ;./max7219.h: 111:     max7219_WriteBits(temporal);
+[e ( _max7219_WriteBits (1 _temporal ]
+"112
+[; ;./max7219.h: 112: }
+[e :UE 106 ]
+}
+"114
+[; ;./max7219.h: 114: void max7219_Clear() {
+[v _max7219_Clear `(v ~T0 @X0 1 ef ]
+{
+[e :U _max7219_Clear ]
+[f ]
+"115
+[; ;./max7219.h: 115:     for (char i = 0; i < 8; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 108  ]
+[e $U 109  ]
+[e :U 108 ]
+{
+"116
+[; ;./max7219.h: 116:         max7219_WriteDigito(i, 0);
+[e ( _max7219_WriteDigito (2 , -> _i `uc -> -> 0 `i `uc ]
+"117
+[; ;./max7219.h: 117:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 108  ]
+[e :U 109 ]
+}
+"118
+[; ;./max7219.h: 118: }
+[e :UE 107 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"9 main.c
+[; ;main.c: 9: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"10
+[; ;main.c: 10:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"11
+[; ;main.c: 11:     max7219_Config();
+[e ( _max7219_Config ..  ]
+"13
+[; ;main.c: 13:     max7219_Clear();
+[e ( _max7219_Clear ..  ]
+"15
+[; ;main.c: 15:     for(int i = 0; i < 9999; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 9999 `i 112  ]
+[e $U 113  ]
+[e :U 112 ]
+{
+"16
+[; ;main.c: 16:         displayNumber(i);
+[e ( _displayNumber (1 _i ]
+"17
+[; ;main.c: 17:         _delay((unsigned long)((2000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"18
+[; ;main.c: 18:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 9999 `i 112  ]
+[e :U 113 ]
+}
+"19
+[; ;main.c: 19:     return;
+[e $UE 111  ]
+"20
+[; ;main.c: 20: }
+[e :UE 111 ]
+}
+"22
+[; ;main.c: 22: void displayNumber( int number) {
+[v _displayNumber `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _displayNumber ]
+[v _number `i ~T0 @X0 1 r1 ]
+[f ]
+"23
+[; ;main.c: 23:     int result;
+[v _result `i ~T0 @X0 1 a ]
+"24
+[; ;main.c: 24:     int pos = 0 ;
+[v _pos `i ~T0 @X0 1 a ]
+[e = _pos -> 0 `i ]
+"25
+[; ;main.c: 25:     max7219_Clear();
+[e ( _max7219_Clear ..  ]
+"26
+[; ;main.c: 26:     while ( number > 0 ) {
+[e $U 116  ]
+[e :U 117 ]
+{
+"27
+[; ;main.c: 27:         result = number % 10 ;
+[e = _result % _number -> 10 `i ]
+"28
+[; ;main.c: 28:         number = number / 10 ;
+[e = _number / _number -> 10 `i ]
+"29
+[; ;main.c: 29:         max7219_WriteDigito(pos++, result);
+[e ( _max7219_WriteDigito (2 , -> ++ _pos -> 1 `i `uc -> _result `uc ]
+"30
+[; ;main.c: 30:     }
+}
+[e :U 116 ]
+"26
+[; ;main.c: 26:     while ( number > 0 ) {
+[e $ > _number -> 0 `i 117  ]
+[e :U 118 ]
+"31
+[; ;main.c: 31: }
+[e :UE 115 ]
+}

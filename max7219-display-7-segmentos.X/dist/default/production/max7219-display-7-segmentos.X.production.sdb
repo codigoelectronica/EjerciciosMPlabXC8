@@ -1,0 +1,148 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"51 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+[v _max7219_Config max7219_Config `(v  1 e 1 0 ]
+"68
+[v _max7219_WriteDigito max7219_WriteDigito `(v  1 e 1 0 ]
+"86
+[v _max7219_WriteBits max7219_WriteBits `(v  1 e 1 0 ]
+"105
+[v _max7219_WriteComando max7219_WriteComando `(v  1 e 1 0 ]
+"114
+[v _max7219_Clear max7219_Clear `(v  1 e 1 0 ]
+"5 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"9 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"22
+[v _displayNumber displayNumber `(v  1 e 1 0 ]
+"29 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+[v _digitos digitos `DC[10]uc  1 s 10 digitos ]
+[s S43 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"295 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\include\PIC16f877A.h
+[u S52 . 1 `S43 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES52  1 e 1 @7 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S22 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1454
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES31  1 e 1 @135 ]
+"9 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"15
+[v main@i i `i  1 a 2 12 ]
+"20
+} 0
+"51 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+[v _max7219_Config max7219_Config `(v  1 e 1 0 ]
+{
+"66
+} 0
+"105
+[v _max7219_WriteComando max7219_WriteComando `(v  1 e 1 0 ]
+{
+[v max7219_WriteComando@comando comando `uc  1 a 1 wreg ]
+"106
+[v max7219_WriteComando@temporal temporal `VEui  1 a 2 12 ]
+"105
+[v max7219_WriteComando@comando comando `uc  1 a 1 wreg ]
+[v max7219_WriteComando@valorDeComando valorDeComando `uc  1 p 1 8 ]
+[v max7219_WriteComando@comando comando `uc  1 a 1 11 ]
+"112
+} 0
+"22 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+[v _displayNumber displayNumber `(v  1 e 1 0 ]
+{
+"24
+[v displayNumber@pos pos `i  1 a 2 7 ]
+"23
+[v displayNumber@result result `i  1 a 2 5 ]
+"22
+[v displayNumber@number number `i  1 p 2 2 ]
+"31
+} 0
+"114 C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+[v _max7219_Clear max7219_Clear `(v  1 e 1 0 ]
+{
+"115
+[v max7219_Clear@i i `uc  1 a 1 1 ]
+"118
+} 0
+"68
+[v _max7219_WriteDigito max7219_WriteDigito `(v  1 e 1 0 ]
+{
+[v max7219_WriteDigito@digito digito `uc  1 a 1 wreg ]
+"69
+[v max7219_WriteDigito@temporal temporal `VEui  1 a 2 12 ]
+"68
+[v max7219_WriteDigito@digito digito `uc  1 a 1 wreg ]
+[v max7219_WriteDigito@valorDeDigito valorDeDigito `uc  1 p 1 8 ]
+[v max7219_WriteDigito@digito digito `uc  1 a 1 11 ]
+"78
+} 0
+"86
+[v _max7219_WriteBits max7219_WriteBits `(v  1 e 1 0 ]
+{
+"87
+[v max7219_WriteBits@temporal temporal `VEui  1 a 2 5 ]
+"88
+[v max7219_WriteBits@c c `VEuc  1 a 1 7 ]
+"86
+[v max7219_WriteBits@valor valor `ui  1 p 2 0 ]
+"103
+} 0
+"5 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0

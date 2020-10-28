@@ -1,0 +1,423 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\ce\AppData\Local\Temp\s42o.o
+end_init CODE 0 0 0 3 2
+config CONFIG 0 2007 2007 1 2
+$dist/default/debug\max7219-display-7-segmentos.X.debug.o
+cinit CODE 0 7F9 7F9 7 2
+text1 CODE 0 64F 64F 37 2
+text2 CODE 0 5FA 5FA 24 2
+text3 CODE 0 74F 74F 51 2
+text4 CODE 0 5E5 5E5 15 2
+text5 CODE 0 61E 61E 31 2
+text6 CODE 0 686 686 3C 2
+text7 CODE 0 704 704 4B 2
+text8 CODE 0 7A0 7A0 59 2
+maintext CODE 0 6C2 6C2 42 2
+cstackCOMMON COMMON 1 70 70 E 1
+cstackBANK0 BANK0 1 20 20 E 1
+bssBANK0 BANK0 1 2E 2E 1 1
+strings STRING 0 3 3 10 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 2F-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 2F-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 13-5E4 2
+CONST 800-1FFF 2
+ENTRY 13-5E4 2
+ENTRY 800-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 13-5E4 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+EEDATA 2100-21FF 2
+STRCODE 13-5E4 2
+STRCODE 800-1FFF 2
+STRING 13-5E4 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\max7219-display-7-segmentos.X.debug.o
+7F9 cinit CODE >401:C:\Users\ce\AppData\Local\Temp\s42o.
+7F9 cinit CODE >404:C:\Users\ce\AppData\Local\Temp\s42o.
+7F9 cinit CODE >415:C:\Users\ce\AppData\Local\Temp\s42o.
+7FA cinit CODE >416:C:\Users\ce\AppData\Local\Temp\s42o.
+7FB cinit CODE >417:C:\Users\ce\AppData\Local\Temp\s42o.
+7FC cinit CODE >423:C:\Users\ce\AppData\Local\Temp\s42o.
+7FC cinit CODE >425:C:\Users\ce\AppData\Local\Temp\s42o.
+7FD cinit CODE >426:C:\Users\ce\AppData\Local\Temp\s42o.
+7A0 text8 CODE >5:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7A0 text8 CODE >13:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7A1 text8 CODE >14:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7A3 text8 CODE >15:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7A8 text8 CODE >16:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7AA text8 CODE >18:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7AC text8 CODE >19:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7B1 text8 CODE >20:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7B5 text8 CODE >22:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7B7 text8 CODE >23:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7BB text8 CODE >24:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7BD text8 CODE >25:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7BF text8 CODE >26:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7C6 text8 CODE >27:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7CA text8 CODE >25:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7CB text8 CODE >30:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7D2 text8 CODE >31:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7DA text8 CODE >32:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7E0 text8 CODE >33:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7E1 text8 CODE >35:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7E8 text8 CODE >36:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7EC text8 CODE >38:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7EF text8 CODE >39:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7F4 text8 CODE >40:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+7F8 text8 CODE >41:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awdiv.c
+704 text7 CODE >5:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+704 text7 CODE >12:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+705 text7 CODE >13:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+707 text7 CODE >14:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+70C text7 CODE >15:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+70E text7 CODE >17:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+710 text7 CODE >18:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+715 text7 CODE >19:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+719 text7 CODE >20:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+71B text7 CODE >21:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+71D text7 CODE >22:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+724 text7 CODE >23:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+728 text7 CODE >21:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+729 text7 CODE >26:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+731 text7 CODE >27:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+737 text7 CODE >28:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+73E text7 CODE >29:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+742 text7 CODE >31:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+745 text7 CODE >32:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+74A text7 CODE >33:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+74E text7 CODE >34:C:\Progranm Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\awmod.c
+686 text6 CODE >86:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+686 text6 CODE >87:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+688 text6 CODE >88:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+689 text6 CODE >89:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+68C text6 CODE >90:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+691 text6 CODE >91:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+695 text6 CODE >92:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6A7 text6 CODE >93:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B1 text6 CODE >94:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B2 text6 CODE >95:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B3 text6 CODE >96:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B4 text6 CODE >97:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B4 text6 CODE >98:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B5 text6 CODE >99:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6B8 text6 CODE >100:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6BB text6 CODE >101:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6C0 text6 CODE >102:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6C1 text6 CODE >103:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+61E text5 CODE >68:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+61F text5 CODE >69:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+621 text5 CODE >70:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+625 text5 CODE >73:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+62C text5 CODE >74:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+633 text5 CODE >75:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+639 text5 CODE >76:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+647 text5 CODE >77:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+64E text5 CODE >78:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+5E5 text4 CODE >114:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+5E5 text4 CODE >115:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+5E8 text4 CODE >116:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+5EF text4 CODE >117:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+74F text3 CODE >31:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+74F text3 CODE >33:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+753 text3 CODE >34:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+758 text3 CODE >35:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+765 text3 CODE >36:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+77A text3 CODE >37:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+78D text3 CODE >38:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+79F text3 CODE >35:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+5FA text2 CODE >105:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+5FB text2 CODE >106:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+5FD text2 CODE >107:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+604 text2 CODE >108:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+60B text2 CODE >109:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+611 text2 CODE >110:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+616 text2 CODE >111:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+61D text2 CODE >112:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+64F text1 CODE >51:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+64F text1 CODE >52:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+652 text1 CODE >53:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+653 text1 CODE >54:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+654 text1 CODE >56:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+657 text1 CODE >57:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+658 text1 CODE >58:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+659 text1 CODE >60:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+660 text1 CODE >61:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+667 text1 CODE >62:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+673 text1 CODE >63:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+67F text1 CODE >64:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+685 text1 CODE >66:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X/max7219.h
+6C2 maintext CODE >17:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6C2 maintext CODE >18:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6C7 maintext CODE >19:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6CA maintext CODE >20:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6CB maintext CODE >22:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6D0 maintext CODE >24:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6D4 maintext CODE >25:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6DF maintext CODE >26:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+6EE maintext CODE >27:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+701 maintext CODE >29:C:\Users\ce\MPLABXProjects\max7219-display-7-segmentos.X\main.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__end_of_max7219_Clear BF4 0 CODE 0 text4 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+main@i 2C 0 BANK0 1 cstackBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteComando@comando 7B 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\ce\AppData\Local\Temp\s42o.o
+_main D84 0 CODE 0 maintext dist/default/debug\max7219-display-7-segmentos.X.debug.o
+btemp 7E 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+start 0 0 CODE 0 init C:\Users\ce\AppData\Local\Temp\s42o.o
+__size_of___awdiv 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of___awmod 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of_main 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of_max7219_Config D0C 0 CODE 0 text1 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hpowerup 0 0 CODE 0 powerup -
+___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\ce\AppData\Local\Temp\s42o.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\ce\AppData\Local\Temp\s42o.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\ce\AppData\Local\Temp\s42o.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\ce\AppData\Local\Temp\s42o.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\ce\AppData\Local\Temp\s42o.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\ce\AppData\Local\Temp\s42o.o
+wtemp0 7E 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteDigito@digito 7B 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hfunctab 0 0 ENTRY 0 functab -
+___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hclrtext 0 0 ABS 0 clrtext -
+max7219_WriteBits@c 77 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+_digitos 12 0 STRING 0 strings dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of_max7219_WriteComando 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lmaintext 0 0 ABS 0 maintext -
+__size_of_max7219_WriteBits 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of___awdiv FF2 0 CODE 0 text8 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of___awmod E9E 0 CODE 0 text7 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of_max7219_WriteComando C3C 0 CODE 0 text2 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___stackhi 0 0 ABS 0 - C:\Users\ce\AppData\Local\Temp\s42o.o
+___stacklo 0 0 ABS 0 - C:\Users\ce\AppData\Local\Temp\s42o.o
+start_initialization FF2 0 CODE 0 cinit dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of_max7219_WriteDigito 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+_TRISCbits 87 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteBits@valor 70 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteComando@temporal 7C 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\ce\AppData\Local\Temp\s42o.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 10 0 STRING 0 strings dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hmaintext 0 0 ABS 0 maintext -
+_max7219_WriteDigito C3C 0 CODE 0 text5 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FF2 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+max7219_WriteDigito@temporal 7C 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+_PORTCbits 7 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__end_of_max7219_WriteBits D84 0 CODE 0 text6 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+displayNumber@number 22 0 BANK0 1 cstackBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__S0 2008 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+displayNumber@result 25 0 BANK0 1 cstackBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of_max7219_Config 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lintentry 0 0 CODE 0 intentry -
+__stringtab 6 0 STRING 0 strings dist/default/debug\max7219-display-7-segmentos.X.debug.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ce\AppData\Local\Temp\s42o.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_displayNumber E9E 0 CODE 0 text3 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awmod@counter 75 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awdiv F40 0 CODE 0 text8 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awmod E08 0 CODE 0 text7 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__pmaintext D84 0 CODE 0 maintext dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of_max7219_WriteDigito C9E 0 CODE 0 text5 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteBits@temporal 75 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+displayNumber@pos 27 0 BANK0 1 cstackBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+_max7219_WriteBits D0C 0 CODE 0 text6 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+_max7219_WriteComando BF4 0 CODE 0 text2 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of__stringtab 12 0 STRING 0 strings dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__CFG_LVP$ON 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+?___awmod 70 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hreset_vec 0 0 CODE 0 reset_vec -
+_max7219_Clear BCA 0 CODE 0 text4 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+___awmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext1 C9E 0 CODE 0 text1 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext2 BF4 0 CODE 0 text2 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext3 E9E 0 CODE 0 text3 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext4 BCA 0 CODE 0 text4 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext5 C3C 0 CODE 0 text5 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext6 D0C 0 CODE 0 text6 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext7 E08 0 CODE 0 text7 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__ptext8 F40 0 CODE 0 text8 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of_displayNumber 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteComando@valorDeComando 78 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_WriteDigito@valorDeDigito 78 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/debug\max7219-display-7-segmentos.X.debug.o
+___awmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__end_of_digitos 26 0 STRING 0 strings dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__end_of_displayNumber F40 0 CODE 0 text3 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+max7219_Clear@i 21 0 BANK0 1 cstackBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hend_init 6 0 CODE 0 end_init -
+__end_of_main E08 0 CODE 0 maintext dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__initialization FF2 0 CODE 0 cinit dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__size_of_max7219_Clear 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__pbssBANK0 2E 0 BANK0 1 bssBANK0 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/debug\max7219-display-7-segmentos.X.debug.o
+__pstrings 6 0 STRING 0 strings dist/default/debug\max7219-display-7-segmentos.X.debug.o
+_max7219_Config C9E 0 CODE 0 text1 dist/default/debug\max7219-display-7-segmentos.X.debug.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7F9 FF2 7 2
+text1 0 64F C9E 37 2
+text2 0 5FA BF4 24 2
+text3 0 74F E9E 51 2
+text4 0 5E5 BCA 15 2
+text5 0 61E C3C 31 2
+text6 0 686 D0C 3C 2
+text7 0 704 E08 4B 2
+text8 0 7A0 F40 59 2
+maintext 0 6C2 D84 42 2
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 F 1
+reset_vec 0 0 0 3 2
+strings 0 3 6 10 2
+config 0 2007 400E 1 2
